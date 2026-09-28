@@ -1,0 +1,25 @@
+In terms of m and n, what is the order of the worst case running time for these algorithms?
+ (It's the same for both of them.)
+
+ 0(m^2 * n^2) in the worst case running time
+
+
+How much actual time does it take to run each of the test cases?
+(PyCharm will give you this information when you run the tests.
+For accurate measurements, you should ideally have nothing else running on your computer when you run the tests.)
+
+test for brute force match: avg run time of around 7 secs 650 ms
+test for fingerprint match: avg run time of around 1 sec 600 ms
+
+
+One algorithm performs much better on dense arrays
+(which are full of random numbers) and the other performs
+much better on sparse arrays (where almost all of the elements are zero).
+Which is which and how do you explain this behavior?
+
+Brute force works much better on dense arrays whereas fingerprint works much better at sparse arrays
+The brute force can immediately rule out large chunks of data that dont match the pattern in large dense arrays
+as the many numbers don't match the pattern whereas the fingerprint must search through more of the text before moving
+on to the next length of the pattern.
+For sparse arrays the opposite works out where the fingerprint can jump larger amounts of space before needing to compare
+whereas the brute force can only jump ahead so far at a time so in larger array sizes the pattern length adds up.
